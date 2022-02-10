@@ -8,7 +8,7 @@ This program allows you to solve quadratic equations.
 
 ### 1. Clone this repository:
 ```bash
- git clone
+ git clone https://github.com/ukioxz/Lab1.git
 ```
 
 ### 2. Start:
