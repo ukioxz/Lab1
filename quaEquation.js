@@ -9,7 +9,7 @@ function ask (question) {
   return new Promise(resolve => {
     rl.question(question, resolve);
   });
-}
+};
 
 async function getInfo () {
   const a = await ask('Enter the first number: ');
