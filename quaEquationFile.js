@@ -28,18 +28,18 @@ async function getInfo() {
       const a = numbers[0];
       const b = numbers[1];
       const c = numbers[2];
-      
-      if(typeof a !== 'number' || isNaN(a)){
+
+      if(typeof a !== 'number' || isNaN(a) || a == 0){
         console.log(`Error. Expected a valid real number, got ${a} instead`);
-        rl.close();
+        process.exit(1);
       }
       if(typeof b != 'number'|| isNaN(b)){
         console.log(`Error. Expected a valid real number, got ${b} instead`);
-        rl.close();
+        process.exit(1);
       }
       if(typeof c != 'number'|| isNaN(c)){
         console.log(`Error. Expected a valid real number, got ${c} instead`);
-        rl.close();
+        process.exit(1);
       }
 
       let discriminant = b * b - 4 * a * c;

@@ -5,6 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+
 function ask (question) {
   return new Promise(resolve => {
     rl.question(question, resolve);
@@ -15,6 +16,23 @@ async function getInfo () {
   const a = await ask('Enter the first number: ');
   const b = await ask('Enter the second number: ');
   const c = await ask('Enter the third number: ');
+
+  const aNum = +a;
+  const bNum = +b;
+  const cNum = +c;
+
+  if ( a === '' || isNaN(aNum) || a == 0) {
+      console.log(`Error. Expected a valid real number, got ${a} instead`);
+      process.exit(1);
+  }
+  if ( b === '' || isNaN(bNum)) {
+      console.log(`Error. Expected a valid real number, got ${b} instead`);
+      process.exit(1);
+  }
+  if ( c === '' || isNaN(cNum)) {
+      console.log(`Error. Expected a valid real number, got ${c} instead`);
+      process.exit(1);
+  }
 
   let discriminant = b * b - 4 * a * c;
 
@@ -32,7 +50,7 @@ async function getInfo () {
   else console.log(`Equestion is: ${a}x^2 + ${b}x + ${c}\n There are 0 roots`);
 }
 
-async function printInfo () {
+async function printInfo (a) {
   const info = await getInfo();
   rl.close();
 }
