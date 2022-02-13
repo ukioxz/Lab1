@@ -22,7 +22,7 @@ async function getInfo () {
   const cNum = +c;
 
   if ( a === '' || isNaN(aNum) || a == 0) {
-      console.log('Error. Expected a valid real number, got ${a} instead');
+      console.log(`Error. Expected a valid real number, got ${a} instead`);
       return await getInfo();
   }
   if ( b === '' || isNaN(bNum)) {
