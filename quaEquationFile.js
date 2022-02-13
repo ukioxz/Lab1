@@ -20,9 +20,7 @@ async function getInfo() {
     if (fs.existsSync(fileName)) {
       const regexp = /-*\d+[.\d+]* -*\d+[.\d+]* -*\d+[.\d+]*/;
       const fileContent = fs.readFileSync(fileName, "utf-8");
-      //const str = fileContent.match(regexp)[0];
-    //  const arr = str.split(" ");
-    const arr = fileContent.split(" ");
+      const arr = fileContent.split(" ");
       const numbers = arr.map(parseFloat);
 
       const a = numbers[0];

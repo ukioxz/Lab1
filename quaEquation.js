@@ -23,15 +23,15 @@ async function getInfo () {
 
   if ( a === '' || isNaN(aNum) || a == 0) {
       console.log(`Error. Expected a valid real number, got ${a} instead`);
-      process.exit(1);
+      return await getInfo();
   }
   if ( b === '' || isNaN(bNum)) {
       console.log(`Error. Expected a valid real number, got ${b} instead`);
-      process.exit(1);
+      return await getInfo();
   }
   if ( c === '' || isNaN(cNum)) {
       console.log(`Error. Expected a valid real number, got ${c} instead`);
-      process.exit(1);
+      return await getInfo();
   }
 
   let discriminant = b * b - 4 * a * c;
@@ -50,7 +50,7 @@ async function getInfo () {
   else console.log(`Equestion is: ${a}x^2 + ${b}x + ${c}\n There are 0 roots`);
 }
 
-async function printInfo (a) {
+async function printInfo() {
   const info = await getInfo();
   rl.close();
 }
